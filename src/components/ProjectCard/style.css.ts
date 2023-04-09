@@ -102,6 +102,8 @@ const mediumSpaceContainer = style({
 });
 
 const projectImage = style({
+  maxWidth: "564px",
+  width: "40%",
   "@media": {
     "(max-width: 968px)": {
       width: "70%",
