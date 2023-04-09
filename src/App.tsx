@@ -1,6 +1,7 @@
 import { createEffect, createSignal, on } from "solid-js";
 
 import BaseViewContent from "components/BaseViewContent";
+import ScrollHandler from "components/ScrollHandler";
 
 import MainView from "views/MainView";
 import SkillsView from "views/SkillsView";
@@ -17,7 +18,6 @@ function App() {
   let viewsContainer: HTMLDivElement | null = null;
 
   const [screenNumber, setScreenNumber] = createSignal(0);
-  const [initialTouchPosition, setInitialTouchPosition] = createSignal<null | number>(null);
 
   createEffect(() => {
     window.addEventListener("resize", () => {
@@ -40,41 +40,26 @@ function App() {
     setScreenNumber(event.deltaY > 0 ? Math.min(VIEWS_COUNT - 1, screenNumber() + 1) : Math.max(0, screenNumber() - 1));
   };
 
-  const handleScrollDown = () => {
+  const onScrollDownClick = () => {
     if (screenNumber() === VIEWS_COUNT - 1) return;
     setScreenNumber(screenNumber() + 1);
   };
 
-  const onAppTouch = (ev: TouchEvent) => {
-    if (ev.changedTouches.length === 0) return;
-    setInitialTouchPosition(ev.changedTouches[0].clientY);
+  const onScrollDown = () => {
+    if (screenNumber() === VIEWS_COUNT - 1) return;
+    setScreenNumber((value) => value + 1);
   };
 
-  const onAppTouchMove = (ev: TouchEvent) => {
-    if (!viewsContainer) return;
-    if (viewsContainer.scrollTop !== document.body.offsetHeight * screenNumber()) return;
-
-    if (ev.changedTouches.length === 0) return;
-
-    const initialPosition = initialTouchPosition();
-    if (initialPosition === null) return;
-
-    const difference = -(ev.changedTouches[0].clientY - initialPosition);
-    if (Math.abs(difference) < 25) return;
-    if (difference < 0 && screenNumber() === 0) return;
-    if (difference > 0 && screenNumber() === VIEWS_COUNT - 1) return;
-    setScreenNumber(screenNumber() + (difference > 0 ? 1 : -1));
-  };
-
-  const onAppTouchEnd = () => {
-    setInitialTouchPosition(null);
+  const onScrollUp = () => {
+    if (screenNumber() === 0) return;
+    setScreenNumber((value) => value - 1);
   };
 
   return (
-    <div ontouchstart={onAppTouch} ontouchmove={onAppTouchMove} ontouchend={onAppTouchEnd} class={styles.container}>
+    <ScrollHandler onScrollDown={onScrollDown} onScrollUp={onScrollUp} className={styles.container}>
       <BaseViewContent
         handleScreenChange={setScreenNumber}
-        handleScrollDown={handleScrollDown}
+        onScrollDownClick={onScrollDownClick}
         screenNumber={screenNumber}
       />
       <div onWheel={handleAppWheel} ref={(el) => (viewsContainer = el)} class={styles.viewsScrollContainer}>
@@ -86,7 +71,7 @@ function App() {
           <SocialProjectView />
         </div>
       </div>
-    </div>
+    </ScrollHandler>
   );
 }
 

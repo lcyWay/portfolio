@@ -76,6 +76,10 @@ const navContainer = style({
   },
 });
 
+const navItem = style({
+  cursor: "pointer",
+});
+
 const infoContainerAnimation = keyframes({
   from: {
     opacity: 0,
@@ -215,6 +219,7 @@ export const styles = {
   headerTitleLogo,
   hideOnMobile,
   navContainer,
+  navItem,
   infoContainer,
   infoContent,
   paginationContent,

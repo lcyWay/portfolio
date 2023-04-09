@@ -22,12 +22,15 @@ const content = style({
   padding: 40,
   gap: vars.gaps.large,
   margin: `0 ${vars.gaps.small}`,
+  maxWidth: 1000,
   zIndex: 3,
   "@media": {
     "(max-width: 768px)": {
       flexDirection: "column",
       padding: `${vars.gaps.large} ${vars.gaps.medium}`,
       gap: vars.gaps.medium,
+      maxHeight: "70vh",
+      overflowY: "auto",
     },
   },
 });

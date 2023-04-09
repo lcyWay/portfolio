@@ -31,16 +31,18 @@ module.exports = {
       favicon: path.resolve(__dirname, "public/logo.png"),
       minify: !isDev,
     }),
-    new CopyPlugin({
-      patterns: [
-        path.resolve(__dirname, "public")
-      ],
-    }),
     new BaseHrefWebpackPlugin({ baseHref: "/" }),
     new CleanWebpackPlugin(),
     new VanillaExtractPlugin(),
     new MiniCssExtractPlugin(),
     new Dotenv({ systemvars: true }),
+    ...(isDev
+      ? []
+      : [
+          new CopyPlugin({
+            patterns: [path.resolve(__dirname, "public")],
+          }),
+        ]),
   ],
   devServer: {
     port: 3000,

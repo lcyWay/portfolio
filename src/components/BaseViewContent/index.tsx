@@ -1,6 +1,6 @@
 import { Accessor, createEffect, createSignal, on } from "solid-js";
 
-import Button from "components/Button";
+import LinkButton from "components/LinkButton";
 
 import GitHubIcon from "icons/GitHubIcon";
 import GitLabIcon from "icons/GitLabIcon";
@@ -8,16 +8,17 @@ import TelegramIcon from "icons/TelegramIcon";
 import GmailIcon from "icons/GmailIcon";
 import DownIcon from "icons/DownIcon";
 
-import { styles } from "./style.css";
 import { VIEWS_COUNT } from "App";
+
+import { styles } from "./style.css";
 
 interface BaseViewContentInterface {
   screenNumber: Accessor<number>;
   handleScreenChange: (value: number) => void;
-  handleScrollDown: () => void;
+  onScrollDownClick: () => void;
 }
 
-function BaseViewContent({ handleScreenChange, screenNumber, handleScrollDown }: BaseViewContentInterface) {
+function BaseViewContent({ handleScreenChange, screenNumber, onScrollDownClick }: BaseViewContentInterface) {
   const [top, setTop] = createSignal(0);
 
   let paginationItem: HTMLDivElement | null = null;
@@ -33,23 +34,23 @@ function BaseViewContent({ handleScreenChange, screenNumber, handleScrollDown }:
     <>
       <div class={styles.infoContainer}>
         <div class={styles.infoContent}>
-          <Button>
+          <LinkButton href="https://github.com/lcyWay">
             <GitHubIcon />
             GitHub
-          </Button>
-          <Button>
+          </LinkButton>
+          <LinkButton href="https://gitlab.com/lcyWay">
             <GitLabIcon />
             GitLab
-          </Button>
-          <Button>
+          </LinkButton>
+          <LinkButton href="https://t.me/lcyWay">
             <TelegramIcon />
             lcyWay
-          </Button>
+          </LinkButton>
           <div class={styles.hideOnMobile}>
-            <Button>
+            <LinkButton href="mailto:carepuw@gmail.com">
               <GmailIcon />
               carepuw@gmail.com
-            </Button>
+            </LinkButton>
           </div>
         </div>
       </div>
@@ -73,7 +74,7 @@ function BaseViewContent({ handleScreenChange, screenNumber, handleScrollDown }:
           <div class={styles.paginationSelected} style={{ top: top() + "px" }} />
           <div class={styles.paginationBorder} />
         </div>
-        <div onClick={handleScrollDown} class={styles.paginationScrollDownContainer}>
+        <div onClick={onScrollDownClick} class={styles.paginationScrollDownContainer}>
           <DownIcon />
           Scroll Down
         </div>
@@ -85,8 +86,12 @@ function BaseViewContent({ handleScreenChange, screenNumber, handleScrollDown }:
             Frontend Developer Portfolio
           </div>
           <nav class={styles.navContainer}>
-            <div>Works</div>
-            <div>Skills</div>
+            <div class={styles.navItem} onClick={() => handleScreenChange(1)}>
+              Skills
+            </div>
+            <div class={styles.navItem} onClick={() => handleScreenChange(2)}>
+              Works
+            </div>
           </nav>
         </div>
       </div>

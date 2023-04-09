@@ -11,7 +11,7 @@ function ShouldDoProjectView() {
         githubLink="https://github.com/lcyWay/should-do-frontend"
         webLink="https://what-should-i-do.vercel.app"
         description="Task manager with authorization and activity tracking"
-        stack="Next.js, Typescript, styled-components, Socket.io, i18n, Prettier, Eslint"
+        stack="Node.js, Express, MongoDB, JWT, Socket.io, Next.js, styled-components, i18n, Prettier, Eslint"
         imageSrc="/images/should-do.png"
       />
     </div>

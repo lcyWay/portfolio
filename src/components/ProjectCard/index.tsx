@@ -1,5 +1,6 @@
-import { useIntersectionObserver } from "hooks/useIntersectionObserver";
 import { createSignal } from "solid-js";
+
+import { useIntersectionObserver } from "hooks/useIntersectionObserver";
 
 import GitHubIcon from "icons/GitHubIcon";
 import WebIcon from "icons/WebIcon";
