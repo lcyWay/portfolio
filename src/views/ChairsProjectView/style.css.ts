@@ -15,11 +15,13 @@ const container = style({
 
 const yellowSphere = style({
   position: "absolute",
-  left: "10%",
-  top: "7%",
+  left: "25%",
+  top: "12%",
   "@media": {
     "(max-width: 768px)": {
       width: 100,
+      left: "10%",
+      top: "7%",
     },
   },
 });

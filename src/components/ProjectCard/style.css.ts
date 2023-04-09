@@ -29,8 +29,7 @@ const content = style({
       flexDirection: "column",
       padding: `${vars.gaps.large} ${vars.gaps.medium}`,
       gap: vars.gaps.medium,
-      maxHeight: "70vh",
-      overflowY: "auto",
+      maxWidth: 540,
     },
   },
 });

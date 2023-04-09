@@ -15,11 +15,12 @@ const container = style({
 
 const blueSphere = style({
   position: "absolute",
-  right: "5%",
+  right: "25%",
   bottom: "5%",
   "@media": {
     "(max-width: 768px)": {
       width: 100,
+      right: "5%",
     },
   },
 });

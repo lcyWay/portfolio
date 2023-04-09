@@ -41,7 +41,7 @@ export const [themeClass, vars] = createTheme({
   },
 });
 
-const iosContainer = style([
+const container = style([
   themeClass,
   {
     display: "flex",
@@ -49,21 +49,17 @@ const iosContainer = style([
     flexDirection: "column",
     fontSize: 16,
     color: "#ffffff",
-    "@media": {
-      "(max-width: 768px)": {
-        fontSize: 13,
-      },
-    },
-  },
-]);
-
-const container = style([
-  themeClass,
-  iosContainer,
-  {
     overflow: "hidden",
     height: "100vh",
     maxHeight: "100vh",
+    "@media": {
+      "(max-width: 768px)": {
+        fontSize: 13,
+        overflow: "unset",
+        height: "auto",
+        maxHeight: "unset",
+      },
+    },
   },
 ]);
 
@@ -99,4 +95,4 @@ const viewsContainer = style({
   },
 });
 
-export const styles = { iosContainer, container, viewsScrollContainer, viewsContainer };
+export const styles = { container, viewsScrollContainer, viewsContainer };
