@@ -37,7 +37,7 @@ const headerContent = style({
   fontWeight: 600,
   zIndex: 3,
   "@media": {
-    "(max-width: 1024px)": {
+    "(max-width: 968px)": {
       fontSize: vars.fonts.titleMobile,
     },
   },
@@ -59,7 +59,7 @@ const sphereRedImage = style({
   top: "10%",
   left: "22%",
   "@media": {
-    "(max-width: 1024px)": {
+    "(max-width: 968px)": {
       top: "10%",
       left: "5%",
       width: "120px",
@@ -72,7 +72,7 @@ const sphereYellowImage = style({
   top: "18%",
   left: "29%",
   "@media": {
-    "(max-width: 1024px)": {
+    "(max-width: 968px)": {
       top: "18%",
       left: "20%",
       width: "100px",
@@ -86,7 +86,7 @@ const sphereMainImage = style({
   top: "50%",
   transform: "translate(-50%, -50%)",
   "@media": {
-    "(max-width: 1024px)": {
+    "(max-width: 968px)": {
       left: "90%",
       top: "50%",
       width: "100%",

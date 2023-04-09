@@ -22,7 +22,7 @@ const headerContainer = style({
   animation: `${headerContainerShowAnimation} 1s`,
   padding: `${vars.gaps.large} 0`,
   "@media": {
-    "(max-width: 1024px)": {
+    "(max-width: 968px)": {
       padding: `${vars.gaps.medium} ${vars.gaps.small}`,
     },
   },
@@ -48,7 +48,7 @@ const headerTitleLogo = style({
   fontWeight: 600,
   letterSpacing: 2.5,
   "@media": {
-    "(max-width: 1024px)": {
+    "(max-width: 968px)": {
       fontSize: vars.fonts.hintMobile,
     },
   },
@@ -60,7 +60,7 @@ const headerTitleContainer = style({
   gap: vars.gaps.medium,
   fontSize: vars.fonts.label,
   "@media": {
-    "(max-width: 1024px)": {
+    "(max-width: 968px)": {
       fontSize: vars.fonts.labelMobile,
     },
   },
@@ -71,7 +71,7 @@ const navContainer = style({
   alignItems: "center",
   gap: vars.gaps.large,
   "@media": {
-    "(max-width: 1024px)": {
+    "(max-width: 968px)": {
       display: "none",
     },
   },
@@ -101,7 +101,7 @@ const infoContainer = style({
   animation: `${infoContainerAnimation} 1s`,
   padding: `${vars.gaps.large} ${vars.gaps.medium}`,
   "@media": {
-    "(max-width: 1024px)": {
+    "(max-width: 968px)": {
       padding: `${vars.gaps.medium} ${vars.gaps.small}`,
     },
   },
@@ -113,7 +113,7 @@ const infoContent = style({
   margin: "0 auto",
   gap: vars.gaps.medium,
   "@media": {
-    "(max-width: 1024px)": {
+    "(max-width: 968px)": {
       gap: vars.gaps.small,
     },
   },
@@ -143,7 +143,7 @@ const paginationContainer = style({
   alignItems: "center",
   justifyContent: "space-between",
   "@media": {
-    "(max-width: 1024px)": {
+    "(max-width: 968px)": {
       display: "none",
     },
   },
@@ -207,7 +207,7 @@ globalStyle(`${paginationScrollDownContainer}:hover > svg #stroke`, {
 const hideOnMobile = style({
   display: "flex",
   "@media": {
-    "(max-width: 1024px)": {
+    "(max-width: 968px)": {
       display: "none",
     },
   },

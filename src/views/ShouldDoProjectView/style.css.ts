@@ -18,7 +18,7 @@ const blueSphere = style({
   right: "25%",
   bottom: "5%",
   "@media": {
-    "(max-width: 1024px)": {
+    "(max-width: 968px)": {
       width: 100,
       right: "5%",
     },

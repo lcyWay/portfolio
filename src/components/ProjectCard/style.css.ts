@@ -25,7 +25,7 @@ const content = style({
   maxWidth: 1000,
   zIndex: 3,
   "@media": {
-    "(max-width: 1024px)": {
+    "(max-width: 968px)": {
       flexDirection: "column",
       margin: `0 ${vars.gaps.small}`,
       padding: `${vars.gaps.large} ${vars.gaps.medium}`,
@@ -48,7 +48,7 @@ const leftSideContainer = style({
   flexDirection: "column",
   gap: vars.gaps.large,
   "@media": {
-    "(max-width: 1024px)": {
+    "(max-width: 968px)": {
       gap: vars.gaps.small,
     },
   },
@@ -59,7 +59,7 @@ const title = style({
   fontSize: vars.fonts.title,
   fontWeight: 600,
   "@media": {
-    "(max-width: 1024px)": {
+    "(max-width: 968px)": {
       fontSize: vars.fonts.titleMobile,
     },
   },
@@ -82,7 +82,7 @@ const labelWithIcon = style([
     fontSize: vars.fonts.label,
     fontWeight: 600,
     "@media": {
-      "(max-width: 1024px)": {
+      "(max-width: 968px)": {
         fontSize: vars.fonts.labelMobile,
       },
     },
@@ -103,7 +103,7 @@ const mediumSpaceContainer = style({
 
 const projectImage = style({
   "@media": {
-    "(max-width: 1024px)": {
+    "(max-width: 968px)": {
       width: "70%",
     },
   },

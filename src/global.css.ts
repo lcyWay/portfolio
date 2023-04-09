@@ -11,6 +11,7 @@ globalStyle("body", {
   display: "flex",
   flexDirection: "column",
   fontFamily: "Quicksand, sans-serif",
+  background: "#843CCC",
 });
 
 globalStyle("a", {
@@ -53,7 +54,7 @@ const container = style([
     height: "100vh",
     maxHeight: "100vh",
     "@media": {
-      "(max-width: 1024px)": {
+      "(max-width: 968px)": {
         fontSize: 13,
         overflow: "unset",
         height: "auto",
@@ -62,6 +63,20 @@ const container = style([
     },
   },
 ]);
+
+const iosContainer = style([
+  themeClass,
+  container,
+  {
+    overflow: "unset",
+    height: "auto",
+    maxHeight: "unset",
+  },
+]);
+
+globalStyle(`${iosContainer} #base-view-pagination-container`, {
+  display: "none",
+});
 
 const viewsScrollContainer = style({
   overflow: "hidden",
@@ -76,7 +91,7 @@ const viewsContainer = style({
   backgroundBlendMode: "luminosity",
   backgroundRepeat: "no-repeat",
   "@media": {
-    "(max-width: 1024px)": {
+    "(max-width: 968px)": {
       background: `
         100% 60% / 100% url('/images/sphere-main.png'),
         100% 95% / 100% url('/images/sphere-main.png'),
@@ -95,4 +110,4 @@ const viewsContainer = style({
   },
 });
 
-export const styles = { container, viewsScrollContainer, viewsContainer };
+export const styles = { iosContainer, container, viewsScrollContainer, viewsContainer };

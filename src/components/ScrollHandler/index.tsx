@@ -1,8 +1,8 @@
-import { JSXElement, createSignal } from "solid-js";
+import { Accessor, JSXElement, createSignal } from "solid-js";
 
 interface ScrollHandlerInterface {
   children: JSXElement;
-  className?: string;
+  className?: Accessor<string>;
   onScrollDown?: (event: MouseEvent | TouchEvent) => void;
   onScrollUp?: (event: MouseEvent | TouchEvent) => void;
   ref?: (element: HTMLDivElement) => void;
@@ -37,7 +37,7 @@ function ScrollHandler({ children, className, onScrollDown, ref, onScrollUp }: S
       ontouchmove={onAppTouchMove}
       ontouchend={onAppInteractiveEnd}
       ref={ref}
-      class={className || ""}
+      class={className?.() || ""}
     >
       {children}
     </div>

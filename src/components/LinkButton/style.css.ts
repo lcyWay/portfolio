@@ -16,7 +16,7 @@ globalStyle(`${button} a`, {
   alignItems: "center",
   gap: "4px",
   "@media": {
-    "(max-width: 1024px)": {
+    "(max-width: 968px)": {
       fontSize: vars.fonts.hintMobile,
     },
   },

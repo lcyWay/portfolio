@@ -54,7 +54,7 @@ function BaseViewContent({ handleScreenChange, screenNumber, onScrollDownClick }
           </div>
         </div>
       </div>
-      <div class={styles.paginationContainer}>
+      <div id="base-view-pagination-container" class={styles.paginationContainer}>
         <div class={styles.paginationScrollDownContainer} />
         <div class={styles.paginationContent}>
           <div>
