@@ -21,12 +21,13 @@ const content = style({
   borderRadius: vars.gaps.large,
   padding: 40,
   gap: vars.gaps.large,
-  margin: `0 ${vars.gaps.small}`,
+  margin: `0 ${vars.gaps.medium}`,
   maxWidth: 1000,
   zIndex: 3,
   "@media": {
-    "(max-width: 768px)": {
+    "(max-width: 1024px)": {
       flexDirection: "column",
+      margin: `0 ${vars.gaps.small}`,
       padding: `${vars.gaps.large} ${vars.gaps.medium}`,
       gap: vars.gaps.medium,
       maxWidth: 540,
@@ -47,7 +48,7 @@ const leftSideContainer = style({
   flexDirection: "column",
   gap: vars.gaps.large,
   "@media": {
-    "(max-width: 768px)": {
+    "(max-width: 1024px)": {
       gap: vars.gaps.small,
     },
   },
@@ -58,7 +59,7 @@ const title = style({
   fontSize: vars.fonts.title,
   fontWeight: 600,
   "@media": {
-    "(max-width: 768px)": {
+    "(max-width: 1024px)": {
       fontSize: vars.fonts.titleMobile,
     },
   },
@@ -81,7 +82,7 @@ const labelWithIcon = style([
     fontSize: vars.fonts.label,
     fontWeight: 600,
     "@media": {
-      "(max-width: 768px)": {
+      "(max-width: 1024px)": {
         fontSize: vars.fonts.labelMobile,
       },
     },
@@ -102,7 +103,7 @@ const mediumSpaceContainer = style({
 
 const projectImage = style({
   "@media": {
-    "(max-width: 768px)": {
+    "(max-width: 1024px)": {
       width: "70%",
     },
   },

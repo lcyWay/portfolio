@@ -18,7 +18,7 @@ const yellowSphere = style({
   left: "25%",
   top: "12%",
   "@media": {
-    "(max-width: 768px)": {
+    "(max-width: 1024px)": {
       width: 100,
       left: "10%",
       top: "7%",

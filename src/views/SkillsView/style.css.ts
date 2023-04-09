@@ -31,7 +31,7 @@ const content = style({
   gap: vars.gaps.large,
   zIndex: 3,
   "@media": {
-    "(max-width: 768px)": {
+    "(max-width: 1024px)": {
       gap: vars.gaps.medium,
       padding: `0 ${vars.gaps.medium}`,
     },
@@ -51,7 +51,7 @@ const title = style({
   fontSize: vars.fonts.title,
   fontWeight: 600,
   "@media": {
-    "(max-width: 768px)": {
+    "(max-width: 1024px)": {
       fontSize: vars.fonts.titleMobile,
     },
   },
@@ -83,7 +83,7 @@ const skillBlock = style({
 const skillImage = style({
   height: 64,
   "@media": {
-    "(max-width: 768px)": {
+    "(max-width: 1024px)": {
       height: 32,
     },
     "(max-width: 425px)": {
@@ -97,7 +97,7 @@ const yellowSphere = style({
   left: "20%",
   top: "15%",
   "@media": {
-    "(max-width: 768px)": {
+    "(max-width: 1024px)": {
       width: 100,
       left: "5%",
       top: "10%",
@@ -109,7 +109,7 @@ const purpleSphere = style({
   right: "20%",
   bottom: "10%",
   "@media": {
-    "(max-width: 768px)": {
+    "(max-width: 1024px)": {
       width: 100,
       right: "5%",
       bottom: "5%",

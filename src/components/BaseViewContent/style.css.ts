@@ -22,7 +22,7 @@ const headerContainer = style({
   animation: `${headerContainerShowAnimation} 1s`,
   padding: `${vars.gaps.large} 0`,
   "@media": {
-    "(max-width: 768px)": {
+    "(max-width: 1024px)": {
       padding: `${vars.gaps.medium} ${vars.gaps.small}`,
     },
   },
@@ -33,6 +33,7 @@ const headerContent = style({
   maxWidth: 1200,
   margin: "0 auto",
   justifyContent: "space-between",
+  padding: `0 ${vars.gaps.medium}`,
 });
 
 const headerTitleLogo = style({
@@ -47,7 +48,7 @@ const headerTitleLogo = style({
   fontWeight: 600,
   letterSpacing: 2.5,
   "@media": {
-    "(max-width: 768px)": {
+    "(max-width: 1024px)": {
       fontSize: vars.fonts.hintMobile,
     },
   },
@@ -59,7 +60,7 @@ const headerTitleContainer = style({
   gap: vars.gaps.medium,
   fontSize: vars.fonts.label,
   "@media": {
-    "(max-width: 768px)": {
+    "(max-width: 1024px)": {
       fontSize: vars.fonts.labelMobile,
     },
   },
@@ -70,7 +71,7 @@ const navContainer = style({
   alignItems: "center",
   gap: vars.gaps.large,
   "@media": {
-    "(max-width: 768px)": {
+    "(max-width: 1024px)": {
       display: "none",
     },
   },
@@ -98,9 +99,9 @@ const infoContainer = style({
   right: 0,
   zIndex: 5,
   animation: `${infoContainerAnimation} 1s`,
-  padding: `${vars.gaps.large} 0`,
+  padding: `${vars.gaps.large} ${vars.gaps.medium}`,
   "@media": {
-    "(max-width: 768px)": {
+    "(max-width: 1024px)": {
       padding: `${vars.gaps.medium} ${vars.gaps.small}`,
     },
   },
@@ -112,7 +113,7 @@ const infoContent = style({
   margin: "0 auto",
   gap: vars.gaps.medium,
   "@media": {
-    "(max-width: 768px)": {
+    "(max-width: 1024px)": {
       gap: vars.gaps.small,
     },
   },
@@ -142,7 +143,7 @@ const paginationContainer = style({
   alignItems: "center",
   justifyContent: "space-between",
   "@media": {
-    "(max-width: 768px)": {
+    "(max-width: 1024px)": {
       display: "none",
     },
   },
@@ -206,7 +207,7 @@ globalStyle(`${paginationScrollDownContainer}:hover > svg #stroke`, {
 const hideOnMobile = style({
   display: "flex",
   "@media": {
-    "(max-width: 768px)": {
+    "(max-width: 1024px)": {
       display: "none",
     },
   },

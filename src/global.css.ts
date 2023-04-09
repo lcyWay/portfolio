@@ -53,7 +53,7 @@ const container = style([
     height: "100vh",
     maxHeight: "100vh",
     "@media": {
-      "(max-width: 768px)": {
+      "(max-width: 1024px)": {
         fontSize: 13,
         overflow: "unset",
         height: "auto",
@@ -76,7 +76,7 @@ const viewsContainer = style({
   backgroundBlendMode: "luminosity",
   backgroundRepeat: "no-repeat",
   "@media": {
-    "(max-width: 768px)": {
+    "(max-width: 1024px)": {
       background: `
         100% 60% / 100% url('/images/sphere-main.png'),
         100% 95% / 100% url('/images/sphere-main.png'),
