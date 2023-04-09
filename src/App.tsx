@@ -12,12 +12,17 @@ import SocialProjectView from "views/SocialProjectView";
 import { styles } from "global.css";
 
 export const VIEWS_COUNT = 5;
-export const SCROLL_ROOT_ID = "scroll_root_id";
 
 function App() {
   let viewsContainer: HTMLDivElement | null = null;
 
   const [screenNumber, setScreenNumber] = createSignal(0);
+  const [mainContainerClass, setMainContainerClass] = createSignal(styles.container);
+
+  createEffect(() => {
+    if (!navigator.userAgent.match(/(iPad|iPhone|iPod)/)) return;
+    setMainContainerClass(styles.iosContainer);
+  });
 
   createEffect(() => {
     window.addEventListener("resize", () => {
@@ -56,7 +61,7 @@ function App() {
   };
 
   return (
-    <ScrollHandler onScrollDown={onScrollDown} onScrollUp={onScrollUp} className={styles.container}>
+    <ScrollHandler onScrollDown={onScrollDown} onScrollUp={onScrollUp} className={mainContainerClass}>
       <BaseViewContent
         handleScreenChange={setScreenNumber}
         onScrollDownClick={onScrollDownClick}

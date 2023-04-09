@@ -1,8 +1,8 @@
-import { JSXElement, createSignal } from "solid-js";
+import { JSXElement, createSignal, Accessor } from "solid-js";
 
 interface ScrollHandlerInterface {
   children: JSXElement;
-  className?: string;
+  className?: Accessor<string>;
   onScrollDown?: (event: MouseEvent | TouchEvent) => void;
   onScrollUp?: (event: MouseEvent | TouchEvent) => void;
   ref?: (element: HTMLDivElement) => void;
@@ -11,9 +11,6 @@ interface ScrollHandlerInterface {
 function ScrollHandler({ children, className, onScrollDown, ref, onScrollUp }: ScrollHandlerInterface) {
   const [initialTouchPosition, setInitialTouchPosition] = createSignal<null | number>(null);
 
-  const onAppMouseDown = (event: MouseEvent) => setInitialTouchPosition(event.clientY);
-  const onAppMouseMove = (event: MouseEvent) => onAppInteractiveMove(event.clientY, event);
-
   const onAppTouch = (event: TouchEvent) => {
     if (event.changedTouches.length === 0) return;
     setInitialTouchPosition(event.changedTouches[0].clientY);
@@ -21,14 +18,11 @@ function ScrollHandler({ children, className, onScrollDown, ref, onScrollUp }: S
 
   const onAppTouchMove = (event: TouchEvent) => {
     if (event.changedTouches.length === 0) return;
-    onAppInteractiveMove(event.changedTouches[0].clientY, event);
-  };
 
-  const onAppInteractiveMove = (yPos: number, event: MouseEvent | TouchEvent) => {
     const initialPosition = initialTouchPosition();
     if (initialPosition === null) return;
 
-    const difference = -(yPos - initialPosition);
+    const difference = -(event.changedTouches[0].clientY - initialPosition);
     if (Math.abs(difference) < 25) return;
 
     difference > 0 ? onScrollDown?.(event) : onScrollUp?.(event);
@@ -39,14 +33,11 @@ function ScrollHandler({ children, className, onScrollDown, ref, onScrollUp }: S
 
   return (
     <div
-      onmousedown={onAppMouseDown}
-      onmousemove={onAppMouseMove}
-      onmouseup={onAppInteractiveEnd}
       ontouchstart={onAppTouch}
       ontouchmove={onAppTouchMove}
       ontouchend={onAppInteractiveEnd}
       ref={ref}
-      class={className || ""}
+      class={className?.() || ""}
     >
       {children}
     </div>

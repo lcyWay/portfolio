@@ -8,8 +8,6 @@ globalFontFace("Quicksand", {
 
 globalStyle("body", {
   margin: 0,
-  height: "100vh",
-  overflow: "hidden",
   display: "flex",
   flexDirection: "column",
   fontFamily: "Quicksand, sans-serif",
@@ -43,14 +41,12 @@ export const [themeClass, vars] = createTheme({
   },
 });
 
-const container = style([
+const iosContainer = style([
   themeClass,
   {
     display: "flex",
     flex: 1,
     flexDirection: "column",
-    overflow: "hidden",
-    height: "100vh",
     fontSize: 16,
     color: "#ffffff",
     "@media": {
@@ -58,6 +54,16 @@ const container = style([
         fontSize: 13,
       },
     },
+  },
+]);
+
+const container = style([
+  themeClass,
+  iosContainer,
+  {
+    overflow: "hidden",
+    height: "100vh",
+    maxHeight: "100vh",
   },
 ]);
 
@@ -93,4 +99,4 @@ const viewsContainer = style({
   },
 });
 
-export const styles = { container, viewsScrollContainer, viewsContainer };
+export const styles = { iosContainer, container, viewsScrollContainer, viewsContainer };
