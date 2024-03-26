@@ -42,9 +42,9 @@ function BaseViewContent({ handleScreenChange, screenNumber, onScrollDownClick }
             <GitLabIcon />
             GitLab
           </LinkButton>
-          <LinkButton href="https://t.me/lcyWay">
+          <LinkButton href="https://t.me/lowndmc">
             <TelegramIcon />
-            lcyWay
+            lowndmc
           </LinkButton>
           <div class={styles.hideOnMobile}>
             <LinkButton href="mailto:carepuw@gmail.com">
