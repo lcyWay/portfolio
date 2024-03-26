@@ -94,6 +94,11 @@ const sphereMainImage = style({
   },
 });
 
+const resumeContainer = style({
+  display: "flex",
+  marginTop: 8,
+});
+
 export const styles = {
   container,
   headerContainer,
@@ -103,4 +108,5 @@ export const styles = {
   sphereMainImage,
   sphereRedImage,
   sphereYellowImage,
+  resumeContainer,
 };

@@ -1,5 +1,9 @@
 import { createSignal } from "solid-js";
 
+import LinkButton from "components/LinkButton";
+
+import PdfIcon from "icons/PdfIcon";
+
 import { useIntersectionObserver } from "hooks/useIntersectionObserver";
 
 import { styles } from "./style.css";
@@ -20,6 +24,12 @@ function MainView() {
             I'm <span class={styles.highlighted}>Andrey Scherbakov</span>,
           </div>
           <div>Frontend Developer.</div>
+          <div class={styles.resumeContainer}>
+            <LinkButton href="/resume.pdf">
+              <PdfIcon />
+              My Resume
+            </LinkButton>
+          </div>
         </div>
       </div>
     </div>
